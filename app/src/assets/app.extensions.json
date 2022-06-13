@@ -297,6 +297,14 @@
             "title": "APP.BROWSE.TRASHCAN.SIDENAV_LINK.LABEL",
             "description": "APP.BROWSE.TRASHCAN.SIDENAV_LINK.TOOLTIP",
             "route": "trashcan"
+          },
+          {
+            "id": "app.navbar.activiti",
+            "order": 500,
+            "icon": "tab",
+            "title": "Activiti",
+            "description": "APP.BROWSE.FAVORITES.SIDENAV_LINK.TOOLTIP",
+            "route": "activiti"
           }
         ]
       }
@@ -1398,7 +1406,21 @@
         "name": "APP.BROWSE.SEARCH.DUBLIN_CORE",
         "default": false,
         "filterWithContains": true,
-        "aca:fields": ["cm:name", "cm:title", "cm:description", "cm:identifier", "cm:contributor", "cm:coverage", "cm:dcsource", "cm:publisher", "cm:rights", "cm:subject", "cm:type", "TEXT", "TAG"],
+        "aca:fields": [
+          "cm:name",
+          "cm:title",
+          "cm:description",
+          "cm:identifier",
+          "cm:contributor",
+          "cm:coverage",
+          "cm:dcsource",
+          "cm:publisher",
+          "cm:rights",
+          "cm:subject",
+          "cm:type",
+          "TEXT",
+          "TAG"
+        ],
         "include": ["path", "allowableOperations", "properties"],
         "sorting": {
           "options": [
@@ -1497,7 +1519,6 @@
                 "hideDefaultAction": true
               }
             }
-
           ]
         },
         "categories": [
@@ -1621,7 +1642,6 @@
                 "hideDefaultAction": true
               }
             }
-
           ]
         },
         "facetQueries": {
@@ -1700,7 +1720,6 @@
           }
         ]
       }
-
     ],
     "content-metadata-presets": [
       {
@@ -1800,13 +1819,7 @@
             "items": [
               {
                 "aspect": "iptcxmp:iptcxmpAspect",
-                "properties": [
-                  "photoshop:Headline",
-                  "dc:subject",
-                  "dc:description",
-                  "Iptc4xmpCore:SubjectCode",
-                  "photoshop:CaptionWriter"
-                ]
+                "properties": ["photoshop:Headline", "dc:subject", "dc:description", "Iptc4xmpCore:SubjectCode", "photoshop:CaptionWriter"]
               }
             ]
           },
@@ -1950,12 +1963,7 @@
             "items": [
               {
                 "aspect": "iptcxmp:iptcxmpAspect",
-                "properties": [
-                  "Iptc4xmpExt:CVterm",
-                  "Iptc4xmpExt:RegistryId",
-                  "plus:Version",
-                  "Iptc4xmpExt:IptcLastEdited"
-                ]
+                "properties": ["Iptc4xmpExt:CVterm", "Iptc4xmpExt:RegistryId", "plus:Version", "Iptc4xmpExt:IptcLastEdited"]
               }
             ]
           },
@@ -1966,10 +1974,7 @@
               {
                 "id": "app.content.metadata.effectivityAspect",
                 "aspect": "cm:effectivity",
-                "properties": [
-                  "cm:from",
-                  "cm:to"
-                ]
+                "properties": ["cm:from", "cm:to"]
               }
             ]
           }
