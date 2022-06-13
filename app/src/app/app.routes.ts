@@ -38,6 +38,9 @@ import { RecentFilesComponent } from './components/recent-files/recent-files.com
 import { SharedFilesComponent } from './components/shared-files/shared-files.component';
 import { DetailsComponent } from './components/details/details.component';
 
+import { ActivitiComponent } from './components/activiti/activiti.component';
+
+
 export const APP_ROUTES: Routes = [
   {
     path: 'blank',
@@ -477,6 +480,60 @@ export const APP_ROUTES: Routes = [
         path: 'trashcan',
         loadChildren: () => import('./components/trashcan/trashcan.module').then((m) => m.AppTrashcanModule)
       },
+
+      {
+        path: 'activiti',
+        data: {
+          sortingPreferenceKey: 'activiti'
+        },
+        children: [
+          {
+            path: '',
+            component: ActivitiComponent,
+            data: {
+              title: 'activiti'
+            }
+            // loadChildren:
+            //   './components/recent-files/recent-files.module#AppRecentFilesModule'
+          },
+          // deprecated, backwards compatibility with ACA 1.8
+          {
+            path: 'preview/:nodeId',
+            loadChildren: () => import('./components/preview/preview.module').then((m) => m.PreviewModule),
+            data: {
+              navigateSource: 'activiti'
+            }
+          },
+          {
+            path: 'view/:nodeId',
+            outlet: 'viewer',
+            children: [
+              {
+                path: '',
+                data: {
+                  navigateSource: 'activiti'
+                },
+                loadChildren: () => import('./components/viewer/viewer.module').then((m) => m.AppViewerModule)
+              }
+            ]
+          },
+          {
+            path: 'view/:nodeId/:versionId',
+            outlet: 'viewer',
+            children: [
+              {
+                path: '',
+                data: {
+                  navigateSource: 'activiti'
+                },
+                loadChildren: () => import('./components/viewer/viewer.module').then((m) => m.AppViewerModule)
+              }
+            ]
+          }
+        ]
+      },
+
+
       {
         path: 'search',
         children: [
