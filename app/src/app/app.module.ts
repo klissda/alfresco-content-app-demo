@@ -84,6 +84,7 @@ import localePl from '@angular/common/locales/pl';
 import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
+import { ActivitiComponent } from './components/activiti/activiti.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -146,7 +147,8 @@ registerLocaleData(localeSv);
     FavoritesComponent,
     RecentFilesComponent,
     SharedFilesComponent,
-    CreateFromTemplateDialogComponent
+    CreateFromTemplateDialogComponent,
+    ActivitiComponent
   ],
   providers: [
     { provide: AppConfigService, useClass: DebugAppConfigService },
