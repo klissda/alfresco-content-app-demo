@@ -29,9 +29,10 @@ import { AcaAboutModule } from '@alfresco/aca-about';
 import { AcaSettingsModule } from '@alfresco/aca-settings';
 import { environment } from '../environments/environment';
 import { MyExtensionModule } from 'my-extension';
+import { TakeOwnershipModule } from 'take-ownership';
 
 
 @NgModule({
-  imports: [MyExtensionModule,AosExtensionModule, ...(environment.devTools ? [AcaSettingsModule] : []), AcaAboutModule.forRoot(environment.production)]
+  imports: [TakeOwnershipModule,MyExtensionModule,AosExtensionModule, ...(environment.devTools ? [AcaSettingsModule] : []), AcaAboutModule.forRoot(environment.production)]
 })
 export class AppExtensionsModule {}

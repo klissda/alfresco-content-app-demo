@@ -93,6 +93,10 @@
                 "glob": "my-extension.json",
                 "input": "projects/my-extension/assets",
                 "output": "./assets/plugins"
+              },{
+                "glob": "take-ownership.json",
+                "input": "projects/take-ownership/assets",
+                "output": "./assets/plugins"
               }
             ],
             "styles": [
@@ -521,6 +525,46 @@
             "tsConfig": [
               "projects/my-extension/tsconfig.lib.json",
               "projects/my-extension/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "take-ownership": {
+      "projectType": "library",
+      "root": "projects/take-ownership",
+      "sourceRoot": "projects/take-ownership/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/take-ownership/tsconfig.lib.json",
+            "project": "projects/take-ownership/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/take-ownership/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/take-ownership/src/test.ts",
+            "tsConfig": "projects/take-ownership/tsconfig.spec.json",
+            "karmaConfig": "projects/take-ownership/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/take-ownership/tsconfig.lib.json",
+              "projects/take-ownership/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"
